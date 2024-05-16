@@ -41,7 +41,10 @@
   ],
   "dependencies": {
     "@types/node-fetch": "^2.5.10",
-    "node-fetch": "^2.6.1"
+    "dotenv": "^16.4.5",
+    "lodash": "^4.17.21",
+    "node-fetch": "^2.6.1",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/jest": "^28.1.4",

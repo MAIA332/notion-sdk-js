@@ -4,8 +4,8 @@ import { propertiesForNewPages } from "./sampleData.js"
 
 config()
 
-const pageId = process.env.NOTION_PAGE_ID
-const apiKey = process.env.NOTION_API_KEY
+const pageId = "a6c2fbb2eebb4e46b024e2f84c4ce27d" //process.env.NOTION_PAGE_ID
+const apiKey = "secret_uFefdsaC9XjWt9hdl4r0UlEJudwVnnoPuk13KcJjRIt"
 
 const notion = new Client({ auth: apiKey })
 
@@ -55,12 +55,33 @@ async function main() {
         type: "number",
         number: {
           format: "dollar",
-        },
+        },  
       },
       "Last ordered": {
         type: "date",
         date: {},
       },
+      "Person Email": {
+        type: "email",
+        email: {},
+      },
+      "Project owner": {
+        "id": "FlgQ",
+        "name": "Project owner",
+        "type": "people",
+        "people": {}
+      },  
+      "Person Role": {
+        type: "select",
+        select: {
+          options: [
+            {name: "Manager"},
+            {name: "Cashier"},
+            {name: "Stock Clerk"},
+            // Add more roles as needed
+          ]
+        },
+      }
     },
   })
 
@@ -76,6 +97,8 @@ async function main() {
     // Add a few new pages to the database that was just created
     await addNotionPageToDatabase(databaseId, propertiesForNewPages[i])
   }
+
+  console.log("===========================================================\n\n",databaseId);
 }
 
 main()

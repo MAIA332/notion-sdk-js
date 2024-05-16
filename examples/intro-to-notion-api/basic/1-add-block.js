@@ -3,8 +3,8 @@ import { config } from "dotenv"
 
 config()
 
-const pageId = process.env.NOTION_PAGE_ID
-const apiKey = process.env.NOTION_API_KEY
+const pageId = "a6c2fbb2eebb4e46b024e2f84c4ce27d" //process.env.NOTION_PAGE_ID
+const apiKey = "secret_uFefdsaC9XjWt9hdl4r0UlEJudwVnnoPuk13KcJjRIt"
 
 const notion = new Client({ auth: apiKey })
 
@@ -29,7 +29,7 @@ async function main() {
           rich_text: [
             {
               text: {
-                content: "Types of kale", // This is the text that will be displayed in Notion
+                content: "Adicionado por API", // This is the text that will be displayed in Notion
               },
             },
           ],
